@@ -1,0 +1,378 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "20708 백종하 반복문.ipynb의 사본",
+      "provenance": [],
+      "collapsed_sections": [
+        "bZS-LBeF44_f",
+        "mE6HDUHeDnsI",
+        "ursLSo0fCmRN",
+        "g3fNs0RbEPzG"
+      ]
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "T7uQ_PPv0UK3"
+      },
+      "source": [
+        "# 파이썬 문법 정리\r\n",
+        "## 제작자: 백종하\r\n",
+        "## 학번 : 20708\r\n",
+        "### 참고자료: 혼자 공부하는 파이썬\r\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "L4FhKFot0rWH"
+      },
+      "source": [
+        "# 1. 리스트와 반복문"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "QXVYXdO_1JW1"
+      },
+      "source": [
+        "### 반복문: 조건문과 같이 프로그램의 진행을 바꿀 때 사용하는 것\r\n",
+        "\r\n",
+        "### 리스트 : 여러가지 자료를 저장할 수 있는 자료\r\n",
+        "### 요소(element) : 대괄호[ ] 내부에 넣는 자료\r\n",
+        "### 인덱스(index) : 대괄호[ ] 내부에 들어간 숫자\r\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "bZS-LBeF44_f"
+      },
+      "source": [
+        "## 리스트 선언하고 요소에 접근하기"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "h_Xb_YCy7vaO",
+        "outputId": "21acef9f-14ad-43ae-82c7-bdd4b0b9238b"
+      },
+      "source": [
+        "# 숫자만으로 구성된 리스트\r\n",
+        "[1, 2, 3, 4]"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[1, 2, 3, 4]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 31
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "do4Dc7Sg78VT",
+        "outputId": "90eaba72-b208-4fe6-dd49-d5a2249b5a2a"
+      },
+      "source": [
+        "# 문자열만으로 구성된 리스트\r\n",
+        "[\"안\", \"녕\", \"하\", \"세\", \"요\"]"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "['안', '녕', '하', '세', '요']"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 32
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "gyqb4TDC5MUC",
+        "outputId": "59408fca-c6c7-4223-b049-d988a0245a30"
+      },
+      "source": [
+        "# 여러 자료형으로 구성된 리스트\r\n",
+        "[273, 32, 103, '문자열', True, False]"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[273, 32, 103, '문자열', True, False]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 33
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "uXagykY77Qig",
+        "outputId": "59df7304-6e14-4416-9bfe-983098b45198"
+      },
+      "source": [
+        "# 리스트 선언\r\n",
+        "list_a = [273, 32, 103, '문자열', True, False]\r\n",
+        "\r\n",
+        "print(list_a [0])\r\n",
+        "\r\n",
+        "print(list_a [1])\r\n",
+        "\r\n",
+        "print(list_a [2])\r\n",
+        "\r\n",
+        "print(list_a [1:3])"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "273\n",
+            "32\n",
+            "103\n",
+            "[32, 103]\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "mE6HDUHeDnsI"
+      },
+      "source": [
+        "## 리스트연산자: 연결(+), 반복(*), len()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "OsOa7QGs_b02",
+        "outputId": "f78b2d69-2a41-43ca-982c-0102b93ae359"
+      },
+      "source": [
+        "\r\n",
+        "\r\n",
+        "# 리스트를 선언합니다.\r\n",
+        "list_a = [1, 2, 3]\r\n",
+        "list_b = [4, 5, 6]\r\n",
+        "\r\n",
+        "# 출력합니다.\r\n",
+        "print(\"# 리스트\")\r\n",
+        "print(\"list_a = \", list_a)\r\n",
+        "print(\"list_b = \", list_b)\r\n",
+        "print()\r\n",
+        "\r\n",
+        "# 기본 연산자\r\n",
+        "print(\"# 리스트 기본 연산자\")\r\n",
+        "print(\"list_a + list_b =\", list_a + list_b)\r\n",
+        "print(\"list_a * 3 =\", list_a * 3)\r\n",
+        "print()\r\n",
+        "\r\n",
+        "# 함수\r\n",
+        "print(\"# 길이 구하기\")\r\n",
+        "print(\"len(list_a) = \", len(list_a))\r\n",
+        "\r\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "# 리스트\n",
+            "list_a =  [1, 2, 3]\n",
+            "list_b =  [4, 5, 6]\n",
+            "\n",
+            "# 리스트 기본 연산자\n",
+            "list_a + list_b = [1, 2, 3, 4, 5, 6]\n",
+            "list_a * 3 = [1, 2, 3, 1, 2, 3, 1, 2, 3]\n",
+            "\n",
+            "# 길이 구하기\n",
+            "len(list_a) =  3\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ursLSo0fCmRN"
+      },
+      "source": [
+        "## 리스트에 요소 추가하기: append, insert"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_rDQkA-gC8C3",
+        "outputId": "a137743d-936f-4060-e309-2ecb5388e895"
+      },
+      "source": [
+        "# 리스트 연산자\r\n",
+        "\r\n",
+        "# 리스트를 선언합니다.\r\n",
+        "list_a = [1, 2, 3]\r\n",
+        "\r\n",
+        "# 리스트 뒤에 요소 추가하기\r\n",
+        "print(\"# 리스트 뒤에 요소 추가하기\")\r\n",
+        "list_a.append(4)\r\n",
+        "list_a.append(5)\r\n",
+        "print(list_a)\r\n",
+        "print()\r\n",
+        "\r\n",
+        "# 리스트 중간에 요소 추가하기\r\n",
+        "print(\"# 리스트 중간에 요소 추가하기\")\r\n",
+        "list_a.insert(0, 10)\r\n",
+        "print(list_a)\r\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "# 리스트 뒤에 요소 추가하기\n",
+            "[1, 2, 3, 4, 5]\n",
+            "\n",
+            "# 리스트 중간에 요소 추가하기\n",
+            "[10, 1, 2, 3, 4, 5]\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pxmiCWxBDNS9",
+        "outputId": "cfecf908-a298-4ab7-a77c-a01963b7077c"
+      },
+      "source": [
+        "# 리스트에 요소 제거하기\r\n",
+        "\r\n",
+        "list_a = [0, 1, 2, 3, 4, 5]\r\n",
+        "print(\"# 리스트의 요소 하나 제거하기\")\r\n",
+        "\r\n",
+        "# 제거 방법[1] – del\r\n",
+        "del list_a[1]\r\n",
+        "print(\"del list_a[1]:\", list_a)\r\n",
+        "\r\n",
+        "# 제거 방법[2] – pop()\r\n",
+        "list_a.pop(2)\r\n",
+        "print(\"pop(2):\", list_a)\r\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "# 리스트의 요소 하나 제거하기\n",
+            "del list_a[1]: [0, 2, 3, 4, 5]\n",
+            "pop(2): [0, 2, 4, 5]\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "g3fNs0RbEPzG"
+      },
+      "source": [
+        "## For 반복문: 리스트와 함께 사용하기"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nZNil82zEUjo",
+        "outputId": "735095ee-32be-4cda-8277-6afd3f45e156"
+      },
+      "source": [
+        "# 리스트를 선언합니다\r\n",
+        "array = [273, 32, 103, 57, 52]\r\n",
+        "\r\n",
+        "# 리스트에 반복문을 적용합니다\r\n",
+        "for element in array:\r\n",
+        "    # 출력합니다\r\n",
+        "    print(element)\r\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "273\n",
+            "32\n",
+            "103\n",
+            "57\n",
+            "52\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    }
+  ]
+}
